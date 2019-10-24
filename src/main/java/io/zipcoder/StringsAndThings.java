@@ -68,9 +68,26 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+        input = input.toLowerCase();
+        int is = 0;
+        int not = 0;
+        for (int i = 0; i < input.length() -1; i++) {
+            if (input.substring(i, i + 2).equals("is")) {
+                is++;
+            } else {
+            }
+        }
+        for (int i = 0; i < input.length()-2; i++) {
+            if (input.substring(i, i + 3).equals("not")) {
+                not++;
+            }
+        }
+        if (is == not) {
+            return true;
+        } else {
+            return false;
+        }
     }
-
     /**
      * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right.
      * Return true if all the g's in the given string are happy.
@@ -79,7 +96,7 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+        return input.contains("gg");
     }
 
 
@@ -91,6 +108,18 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+
+        int count = 0;
+        for(int i = 1; i < input.length(); i++){
+            if (input.charAt(i) == input.charAt(i-1)){
+                if (input.charAt(i+1)==input.charAt(i)){
+                    count++;
+                }
+
+            }
+        }
+
+
+        return count;
     }
 }
